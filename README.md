@@ -15,32 +15,53 @@
 <img alt="dsmark" align="right" height="50%" width="30%" src="https://c.tenor.com/NzrqQHFBVz8AAAAj/kitty-transparent.gif">
 
 
-```golang
-package main
+```python
+class DataScienceCoordinator:
+    def __init__(self):
+        self.name = "Carlos Cabrera Castrejón"
+        self.alias = "Charly"
+        self.role = {
+            "primary": "Data Science Coordinator @ Nestlé",
+            "secondary": "OOP Teacher @ Universidad Panamericana"
+        }
+        self.tech_stack = ["Python", "SQL", "Power BI", "Tableau", "SSRS", "SSIS"]
+        self.methodologies = ["Agile Scrum", "Data-Driven", "Digital Transformation"]
+    
+    def quick_bio(self):
+        return "Data Science Coordinator, OOP Teacher & Tech Enthusiast; apasionado por Agile, Python y la Transformación Digital."
+    
+    def current_projects(self):
+        return {
+            "Alice Talk": "Desarrollo de LLM con RAG para consultas de negocio",
+            "Alice Tetris": "Optimización de carga de camiones bajo Agile Scrum",
+            "Alice 360": "Transformación digital para Purina"
+        }
+    
+    def learning(self):
+        return ["Técnicas avanzadas de Data Science", "Cloud Computing", "Nuevas tecnologías emergentes"]
+    
+    def collaboration_interests(self):
+        return ["Python", "SQL", "Power BI", "Metodologías Agile"]
+    
+    def seeking_help_with(self):
+        return "Soluciones innovadoras en optimización de la cadena de suministro y transformación digital"
+    
+    def ask_me_about(self):
+        return ["Data Science", "Desarrollo de Software", "Agile", "Estrategias de transformación digital"]
+    
+    def contact(self):
+        return {
+            "email": "ccabreracastrejon@gmail.com",
+            "linkedin": "https://www.linkedin.com/in/carlos-cabrera-cast/",
+            "github": "https://github.com/Carloscast09"
+        }
 
-import (
-	"fmt"
-)
 
-type Bio map[string]string
-
-func main() {
-	for k, v := range GetBio() {
-		fmt.Printf("%+v: %+v\n", k, v)
-	}
-}
-
-func GetBio() Bio {
-	return Bio{
-		"- ⚡ Quick bio:"                  : "Data Science Coordinator, OOP Teacher & Tech Enthusiast; apasionado por Agile, Python y la Transformación Digital.",
-		"- 🔭 I'm currently working on:"    : "Proyectos AI-driven en Nestlé (Alice Talk, Alice Tetris, Alice 360) y dictando clases de POO en la Universidad Panamericana.",
-		"- 🌱 I'm currently learning:"      : "Técnicas avanzadas de Data Science, cloud computing y nuevas tecnologías emergentes.",
-		"- 👯 I'm looking to collaborate on:" : "Proyectos relacionados con Python, SQL, Power BI y metodologías Agile.",
-		"- 🤔 I'm looking for help with:"     : "Soluciones innovadoras en optimización de la cadena de suministro y transformación digital.",
-		"- 💬 Ask me about:"               : "Data Science, Desarrollo de Software, Agile y estrategias de transformación digital.",
-		"- 📫 How to reach me:"            : "ccabreracastrejon@gmail.com | https://www.linkedin.com/in/carlos-cabrera-cast/ | https://github.com/Carloscast09",
-	}
-}
+# Instanciando el perfil
+charly = DataScienceCoordinator()
+print(f"👋 Hola, soy {charly.name} ({charly.alias})")
+print(f"💼 {charly.role['primary']}")
+print(f"🧠 {charly.quick_bio()}")
 ```
 
 ## <picture><img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/about_me.gif?raw=true" width="50px"></picture> Mi Experiencia Profesional
