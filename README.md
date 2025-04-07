@@ -127,11 +127,7 @@ GROUP BY
     p.id, r.id;
 ```
 
-## <picture><img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/about_me.gif?raw=true" width="50px"></picture> Mi Experiencia Profesional
 
-<picture> 
-  <img align="right" src="https://media.giphy.com/media/xUPGcguWZHRC2HyBRS/giphy.gif" width="250px">
-</picture>
 
 - :office: **Data Science Coordinator @ Nestlé**  
   Lidero proyectos innovadores que integran inteligencia artificial y metodologías data-driven para optimizar la cadena de suministro. Destaco en proyectos como **Alice Talk** (desarrollo de LLM con RAG), **Alice Tetris** (optimización de carga de camiones bajo Agile Scrum) y **Alice 360** (transformación digital para Purina).
