@@ -15,53 +15,116 @@
 <img alt="dsmark" align="right" height="50%" width="30%" src="https://c.tenor.com/NzrqQHFBVz8AAAAj/kitty-transparent.gif">
 
 
-```python
-class DataScienceCoordinator:
-    def __init__(self):
-        self.name = "Carlos Cabrera Castrejón"
-        self.alias = "Charly"
-        self.role = {
-            "primary": "Data Science Coordinator @ Nestlé",
-            "secondary": "OOP Teacher @ Universidad Panamericana"
-        }
-        self.tech_stack = ["Python", "SQL", "Power BI", "Tableau", "SSRS", "SSIS"]
-        self.methodologies = ["Agile Scrum", "Data-Driven", "Digital Transformation"]
-    
-    def quick_bio(self):
-        return "Data Science Coordinator, OOP Teacher & Tech Enthusiast; apasionado por Agile, Python y la Transformación Digital."
-    
-    def current_projects(self):
-        return {
-            "Alice Talk": "Desarrollo de LLM con RAG para consultas de negocio",
-            "Alice Tetris": "Optimización de carga de camiones bajo Agile Scrum",
-            "Alice 360": "Transformación digital para Purina"
-        }
-    
-    def learning(self):
-        return ["Técnicas avanzadas de Data Science", "Cloud Computing", "Nuevas tecnologías emergentes"]
-    
-    def collaboration_interests(self):
-        return ["Python", "SQL", "Power BI", "Metodologías Agile"]
-    
-    def seeking_help_with(self):
-        return "Soluciones innovadoras en optimización de la cadena de suministro y transformación digital"
-    
-    def ask_me_about(self):
-        return ["Data Science", "Desarrollo de Software", "Agile", "Estrategias de transformación digital"]
-    
-    def contact(self):
-        return {
-            "email": "ccabreracastrejon@gmail.com",
-            "linkedin": "https://www.linkedin.com/in/carlos-cabrera-cast/",
-            "github": "https://github.com/Carloscast09"
-        }
+```sql
+-- Creando la base de datos para mi perfil
+CREATE DATABASE IF NOT EXISTS CharlyProfile;
+USE CharlyProfile;
 
+-- Tabla con información personal
+CREATE TABLE PersonalInfo (
+    id INT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    alias VARCHAR(50),
+    quick_bio TEXT,
+    email VARCHAR(100),
+    linkedin VARCHAR(255),
+    github VARCHAR(255)
+);
 
-# Instanciando el perfil
-charly = DataScienceCoordinator()
-print(f"👋 Hola, soy {charly.name} ({charly.alias})")
-print(f"💼 {charly.role['primary']}")
-print(f"🧠 {charly.quick_bio()}")
+-- Tabla de roles profesionales
+CREATE TABLE Roles (
+    id INT PRIMARY KEY,
+    person_id INT,
+    title VARCHAR(100),
+    company VARCHAR(100),
+    is_primary BOOLEAN,
+    FOREIGN KEY (person_id) REFERENCES PersonalInfo(id)
+);
+
+-- Tabla de habilidades técnicas
+CREATE TABLE Skills (
+    id INT PRIMARY KEY,
+    person_id INT,
+    skill_name VARCHAR(100),
+    category VARCHAR(50),
+    proficiency INT CHECK (proficiency BETWEEN 1 AND 10),
+    FOREIGN KEY (person_id) REFERENCES PersonalInfo(id)
+);
+
+-- Tabla de proyectos actuales
+CREATE TABLE Projects (
+    id INT PRIMARY KEY,
+    person_id INT,
+    project_name VARCHAR(100),
+    description TEXT,
+    FOREIGN KEY (person_id) REFERENCES PersonalInfo(id)
+);
+
+-- Tabla de intereses de aprendizaje
+CREATE TABLE LearningInterests (
+    id INT PRIMARY KEY,
+    person_id INT,
+    interest VARCHAR(255),
+    FOREIGN KEY (person_id) REFERENCES PersonalInfo(id)
+);
+
+-- Insertando mis datos personales
+INSERT INTO PersonalInfo VALUES (
+    1, 
+    'Carlos Cabrera Castrejón', 
+    'Charly',
+    'Data Science Coordinator, OOP Teacher & Tech Enthusiast; apasionado por Agile, Python y la Transformación Digital.',
+    'ccabreracastrejon@gmail.com',
+    'https://www.linkedin.com/in/carlos-cabrera-cast/',
+    'https://github.com/Carloscast09'
+);
+
+-- Insertando mis roles
+INSERT INTO Roles VALUES 
+(1, 1, 'Data Science Coordinator', 'Nestlé', TRUE),
+(2, 1, 'OOP Teacher', 'Universidad Panamericana', FALSE);
+
+-- Insertando mis habilidades
+INSERT INTO Skills VALUES 
+(1, 1, 'Python', 'Programming Language', 9),
+(2, 1, 'SQL', 'Database', 9),
+(3, 1, 'Power BI', 'Business Intelligence', 8),
+(4, 1, 'Tableau', 'Data Visualization', 8),
+(5, 1, 'Agile Scrum', 'Methodology', 9),
+(6, 1, 'Digital Transformation', 'Strategy', 8);
+
+-- Insertando mis proyectos actuales
+INSERT INTO Projects VALUES 
+(1, 1, 'Alice Talk', 'Desarrollo de LLM con RAG para consultas de negocio'),
+(2, 1, 'Alice Tetris', 'Optimización de carga de camiones bajo Agile Scrum'),
+(3, 1, 'Alice 360', 'Transformación digital para Purina');
+
+-- Insertando mis intereses de aprendizaje
+INSERT INTO LearningInterests VALUES 
+(1, 1, 'Técnicas avanzadas de Data Science'),
+(2, 1, 'Cloud Computing'),
+(3, 1, 'Nuevas tecnologías emergentes');
+
+-- Consulta para mostrar mi perfil completo
+SELECT 
+    p.name AS Nombre,
+    p.alias AS Alias,
+    p.quick_bio AS Bio,
+    r.title AS Rol,
+    r.company AS Empresa,
+    GROUP_CONCAT(DISTINCT s.skill_name) AS Habilidades,
+    GROUP_CONCAT(DISTINCT pr.project_name) AS Proyectos,
+    GROUP_CONCAT(DISTINCT l.interest) AS 'Aprendiendo'
+FROM 
+    PersonalInfo p
+    JOIN Roles r ON p.id = r.person_id
+    JOIN Skills s ON p.id = s.person_id
+    JOIN Projects pr ON p.id = pr.person_id
+    JOIN LearningInterests l ON p.id = l.person_id
+WHERE 
+    r.is_primary = TRUE
+GROUP BY 
+    p.id, r.id;
 ```
 
 ## <picture><img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/about_me.gif?raw=true" width="50px"></picture> Mi Experiencia Profesional
