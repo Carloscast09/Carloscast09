@@ -11,7 +11,39 @@
 	<img src="https://komarev.com/ghpvc/?username=Carloscast09&label=Profile%20views&color=0047AB&style=plastic" alt="Carloscast09" height="25" width="160"/> 
 </p>
 
-## <picture><img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/about_me.gif?raw=true" width="50px"></picture> About Me
+<h2 align="center">About me</h2> 
+<img alt="dsmark" align="right" height="50%" width="30%" src="https://c.tenor.com/NzrqQHFBVz8AAAAj/kitty-transparent.gif">
+
+
+```golang
+package main
+
+import (
+	"fmt"
+)
+
+type Bio map[string]string
+
+func main() {
+	for k, v := range GetBio() {
+		fmt.Printf("%+v: %+v\n", k, v)
+	}
+}
+
+func GetBio() Bio {
+	return Bio{
+		"- ⚡ Quick bio:"                  : "Data Science Coordinator, OOP Teacher & Tech Enthusiast; apasionado por Agile, Python y la Transformación Digital.",
+		"- 🔭 I'm currently working on:"    : "Proyectos AI-driven en Nestlé (Alice Talk, Alice Tetris, Alice 360) y dictando clases de POO en la Universidad Panamericana.",
+		"- 🌱 I'm currently learning:"      : "Técnicas avanzadas de Data Science, cloud computing y nuevas tecnologías emergentes.",
+		"- 👯 I'm looking to collaborate on:" : "Proyectos relacionados con Python, SQL, Power BI y metodologías Agile.",
+		"- 🤔 I'm looking for help with:"     : "Soluciones innovadoras en optimización de la cadena de suministro y transformación digital.",
+		"- 💬 Ask me about:"               : "Data Science, Desarrollo de Software, Agile y estrategias de transformación digital.",
+		"- 📫 How to reach me:"            : "ccabreracastrejon@gmail.com | https://www.linkedin.com/in/carlos-cabrera-cast/ | https://github.com/Carloscast09",
+	}
+}
+```
+
+## <picture><img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/about_me.gif?raw=true" width="50px"></picture> Mi Experiencia Profesional
 
 <picture> 
   <img align="right" src="https://media.giphy.com/media/xUPGcguWZHRC2HyBRS/giphy.gif" width="250px">
@@ -29,7 +61,7 @@
 
 <br>
 
-## <picture> <img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Connect-with-me.gif?raw=true" width="100px"> </picture> Connect with Me
+## <picture> <img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Connect-with-me.gif?raw=true" width="100px"> </picture> ¡Conéctate conmigo!
 
 <p align="center">
 	<a href="mailto:ccabreracastrejon@gmail.com">
@@ -43,9 +75,9 @@
   </a>
 </p>
 
-## 🛠️ My Skills
+## 🛠️ Mis Habilidades Técnicas
 
-### <picture> <img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Programming_Languages.gif?raw=true" width="50px"> </picture> Programming Languages
+### <picture> <img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Programming_Languages.gif?raw=true" width="50px"> </picture> Lenguajes de Programación
 <p align="center"> 
   &emsp; 
   <a href="https://www.python.org" target="_blank"> 
@@ -73,7 +105,7 @@
   </a>
 </p>
 
-### <picture> <img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Software_Tools.gif?raw=true" width="50px"> </picture> Tools & Platforms
+### <picture> <img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/Software_Tools.gif?raw=true" width="50px"> </picture> Herramientas & Plataformas
 <p align="center">
   &emsp;
     <a href="#">
@@ -97,7 +129,7 @@
     </a>
 </p>
 
-### <picture> <img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/IDEs.gif?raw=true" width="50px"> </picture> IDEs
+### <picture> <img src="https://github.com/7oSkaaa/7oSkaaa/blob/main/Images/IDEs.gif?raw=true" width="50px"> </picture> Entornos de Desarrollo
 <p align="center">
   &emsp;
     <a href="#">
@@ -113,13 +145,13 @@
 
 ---
 
-<details><summary><h3>🔥 GitHub Streak Stats</h3></summary>
+<details><summary><h3>🔥 Mis Rachas en GitHub</h3></summary>
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Carloscast09&theme=tokyonight_duo" alt="Carloscast09" />
 </p>
 </details>
 
-<details><summary><h3>💻 GitHub Profile Stats</h3></summary>
+<details><summary><h3>💻 Estadísticas de mi Perfil</h3></summary>
 <p align="center">
   <a href="https://github.com/anuraghazra/github-readme-stats">
     <img alt="Carloscast09's Github Stats" src="https://github-readme-stats.vercel.app/api?username=Carloscast09&show_icons=true&count_private=true&locale=en&theme=tokyonight&layout=compact" height="230px"/>
@@ -130,13 +162,13 @@
 </p>
 </details>
 
-<details><summary><h3>⚡ Recent GitHub Activity</h3></summary>
+<details><summary><h3>⚡ Mi Actividad Reciente</h3></summary>
 <p align="center">
   <img src="https://github-readme-activity-graph.cyclic.app/graph?username=Carloscast09&theme=github" alt="Carloscast09's activity graph"/>
 </p>
 </details>
 
-<details><summary><h3>:trophy: GitHub Profile Trophies</h3></summary>
+<details><summary><h3>:trophy: Mis Trofeos en GitHub</h3></summary>
 <p align="center">
   <a href="https://github.com/ryo-ma/github-profile-trophy">
     <img src="https://github-profile-trophy.vercel.app/?username=Carloscast09&layout=compact&theme=tokyonight&column=4&margin-w=15&margin-h=15" alt="Carloscast09" />
@@ -144,7 +176,7 @@
 </p>
 </details>
 
-<details><summary><h3>:open_file_folder: My Repositories</h3></summary>
+<details><summary><h3>:open_file_folder: Mis Repositorios Destacados</h3></summary>
 <div align="center">
   <p>
     <a href="https://github.com/Carloscast09/your-repo-1">
@@ -160,7 +192,7 @@
 
 <br><br>
 
-## 🐍 A Snake Eating My Contributions Graph
+## 🐍 La Serpiente Devoradora de mis Contribuciones
 	
 <p align="center">
 	<img src="https://github.com/7oSkaaa/7oSkaaa/blob/output/github-contribution-grid-snake.svg?" alt="Snake Game"/>
