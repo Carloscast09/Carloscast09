@@ -127,6 +127,8 @@ GROUP BY
     p.id, r.id;
 ```
 
+## Mi Experiencia Profesional
+
 
 
 - :office: **Data Science Coordinator @ Nestlé**  
