@@ -235,20 +235,66 @@ GROUP BY
 </p>
 </details>
 
-<details open="">
+<details open>
 <summary>
-  <g-emoji class="g-emoji" alias="chart_with_upwards_trend" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4c8.png">📈</g-emoji>
-  <strong>𝙶𝚒𝚝𝚑𝚞𝚋 𝚂𝚝𝚊𝚝𝚜 : </strong>
+  <img src="https://media.giphy.com/media/cj87CxfRtrUifF3Ryk/giphy.gif" width="25">
+  <b>Mis Rachas en GitHub</b>
+</summary>
+
+<br>
+
+<h2 align="center">Carlos Cabrera Castrejón's GitHub Stats</h2>
+
+<p align="center">
+  <table>
+    <tr>
+      <td>
+        <img width="400px" align="center" src="https://github-readme-stats.vercel.app/api?username=Carloscast09&show_icons=true&count_private=true&theme=tokyonight&hide_border=true" />
+      </td>
+      <td>
+        <img width="400px" align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=Carloscast09&theme=tokyonight&hide_border=true" />
+      </td>
+    </tr>
+  </table>
+</p>
+
+<h2 align="center">Most Used Languages</h2>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Carloscast09&langs_count=8&layout=compact&theme=tokyonight&hide_border=true" />
+</p>
+
+</details>
+
+<details>
+<summary>
+  <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="25">
+  <b>GitHub Activity Graph</b>
 </summary>
 <br/>
+
 <p align="center">
-    <img align="center" src="https://github-readme-stats.vercel.app/api?username=Carloscast09&show_icons=true&hide_border=true&title_color=94b4a4&amp&icon_color=FFFFFF&amp&text_color=FFFFFF&amp&bg_color=000000&count_private=true&include_all_commits=true"/>
-    <img align="center" height="195px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Carloscast09&text_color=FFFFFF&bg_color=000000&title_color=94b4a4&langs_count=15&layout=compact&hide_border=true" />
+  <a href="https://github.com/Carloscast09">
+    <img src="https://github-readme-activity-graph.vercel.app/graph?username=Carloscast09&theme=react-dark&hide_border=true&area=true" alt="Carloscast09's Activity Graph" width="100%">
+  </a>
 </p>
+
 </details>
+
+<details>
+<summary>
+  <img src="https://media.giphy.com/media/j2pOGeGYKe2xCCKwfi/giphy.gif" width="25">
+  <b>3D Contribution Graph</b>
+</summary>
 <br/>
-![𝚐𝚒𝚝𝚑𝚞𝚋 𝚐𝚛𝚊𝚙𝚑](https://activity-graph.herokuapp.com/graph?username=Carloscast09&theme=react-dark&hide_border=true&area=true)
-![3D Profile](https://github.com/Carloscast09/Carloscast09/blob/master/profile-3d-contrib/profile-night-rainbow.svg)
+
+<p align="center">
+  <a href="https://github.com/Carloscast09">
+    <img src="https://github-profile-3d-contrib.vercel.app/api?username=Carloscast09&theme=dark" alt="Carloscast09's 3D Contrib Chart" />
+  </a>
+</p>
+
+</details>
 
 <details><summary><h3>⚡ Mi Actividad Reciente</h3></summary>
 <p align="center">
