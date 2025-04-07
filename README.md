@@ -287,9 +287,7 @@ GROUP BY
 <br/>
 
 <p align="center">
-  <a href="https://github.com/Carloscast09">
-    <img src="https://github-profile-3d-contrib.vercel.app/api?username=Carloscast09&theme=dark" alt="Carloscast09's 3D Contrib Chart" />
-  </a>
+  <img src="https://raw.githubusercontent.com/Carloscast09/Carloscast09/master/profile-3d-contrib/profile-night-rainbow.svg" alt="Carloscast09's 3D Contrib Chart" />
 </p>
 
 </details>
