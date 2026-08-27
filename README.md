@@ -32,11 +32,139 @@ I have delivered data initiatives across financial services, supply chain, pharm
 
 <br clear="right" />
 
+🗄️ charly_profile database
+
+<p align="center">
+  <img src="https://img.shields.io/badge/MODEL-STAR_SCHEMA-38BDF8?style=for-the-badge&logo=databricks&logoColor=white" alt="Star schema" />
+  <img src="https://img.shields.io/badge/GRAIN-ONE_ENGINEER-0D47A1?style=for-the-badge&logo=postgresql&logoColor=white" alt="One engineer grain" />
+  <img src="https://img.shields.io/badge/STATUS-ALWAYS_LEARNING-00B8D4?style=for-the-badge&logo=googlegemini&logoColor=white" alt="Always learning" />
+</p>
+
+<details open>
+<summary><b>▶ Run profile_model.sql</b></summary>
+
+<br />
+
+-- ============================================================================
+-- CHARLY_PROFILE
+-- A tiny dimensional model of my professional journey
+-- Grain: one row per role, capability, or measurable impact
+-- Platform: Databricks SQL
+-- ============================================================================
+
+CREATE SCHEMA IF NOT EXISTS charly_profile;
+USE SCHEMA charly_profile;
+
+-- ---------------------------------------------------------------------------
+-- DIMENSION: Who is the engineer behind the data?
+-- ---------------------------------------------------------------------------
+CREATE OR REPLACE TEMP VIEW dim_engineer AS
+SELECT * FROM VALUES
+    (
+        1,
+        'Carlos Cabrera Castrejón',
+        'Charly',
+        'Data Warehouse Specialist',
+        'Profuturo',
+        'Business problems → reliable, governed data products',
+        TRUE
+    )
+AS engineer (
+    engineer_sk,
+    full_name,
+    alias,
+    current_role,
+    current_company,
+    professional_mission,
+    always_learning
+);
+
+-- ---------------------------------------------------------------------------
+-- DIMENSION: The roles that shaped the journey
+-- ---------------------------------------------------------------------------
+CREATE OR REPLACE TEMP VIEW dim_role AS
+SELECT * FROM VALUES
+    (1, 1, 'Data Warehouse Specialist',  'Profuturo',                'Financial Services', TRUE),
+    (2, 1, 'University Professor',        'Universidad Panamericana','Education',          TRUE),
+    (3, 1, 'Data Science Coordinator',    'Nestlé',                   'Supply Chain',       FALSE),
+    (4, 1, 'Data Visualization Lead',     'NYX',                      'Consulting',         FALSE),
+    (5, 1, 'Business Systems Analyst',    'IQVIA',                    'Pharmaceuticals',    FALSE)
+AS role (
+    role_sk,
+    engineer_sk,
+    role_name,
+    organization,
+    business_domain,
+    is_current
+);
+
+-- ---------------------------------------------------------------------------
+-- DIMENSION: Capabilities—not arbitrary proficiency percentages
+-- ---------------------------------------------------------------------------
+CREATE OR REPLACE TEMP VIEW dim_capability AS
+SELECT * FROM VALUES
+    (1,  'Language',      'Python'),
+    (2,  'Language',      'SQL'),
+    (3,  'Processing',    'PySpark'),
+    (4,  'Platform',      'Azure Databricks'),
+    (5,  'Architecture',  'Data Warehousing'),
+    (6,  'Architecture',  'Dimensional Modeling'),
+    (7,  'Engineering',   'ETL / ELT'),
+    (8,  'Engineering',   'Data Quality'),
+    (9,  'DataOps',       'CI/CD'),
+    (10, 'DataOps',       'Databricks Asset Bundles'),
+    (11, 'Integration',   'REST APIs & OAuth M2M'),
+    (12, 'Leadership',    'Business ↔ Technology Translation')
+AS capability (
+    capability_sk,
+    capability_group,
+    capability_name
+);
+
+CREATE OR REPLACE TEMP VIEW bridge_engineer_capability AS
 SELECT
-    'Charly' AS engineer,
-    ARRAY['Data Engineering', 'Data Warehousing', 'DataOps'] AS focus,
-    'Business problems → reliable data products' AS mission,
-    TRUE AS always_learning;
+    1 AS engineer_sk,
+    capability_sk
+FROM dim_capability;
+
+-- ---------------------------------------------------------------------------
+-- FACT: A few measurable outcomes from the journey
+-- ---------------------------------------------------------------------------
+CREATE OR REPLACE TEMP VIEW fct_career_impact AS
+SELECT * FROM VALUES
+    (1, 3, 'Dashboard migration',                  15D, 'dashboards',        'Preserved KPIs and business continuity'),
+    (2, 3, 'Processing and delivery improvement', 50D, 'percent reduction', 'Automated Supply Chain data workflows'),
+    (3, 4, 'AWS data pipeline delivery',           10D, 'pipelines',         'Built with AWS Glue and Amazon S3'),
+    (4, 4, 'ETL processing improvement',           40D, 'percent reduction', 'Accelerated analytical data delivery'),
+    (5, 5, 'SQL Server data scale',                78D, 'million records',   'Supported pharmaceutical market products'),
+    (6, 5, 'Monitor production improvement',       33D, 'percent reduction', 'Automated ETL validation and auditing')
+AS impact (
+    impact_sk,
+    role_sk,
+    impact_name,
+    metric_value,
+    metric_unit,
+    business_context
+);
+
+-- ---------------------------------------------------------------------------
+-- PROFILE QUERY: The current version of Charly
+-- ---------------------------------------------------------------------------
+SELECT
+    e.alias,
+    e.current_role,
+    e.current_company,
+    CONCAT_WS(' · ', SORT_ARRAY(COLLECT_SET(c.capability_name))) AS capabilities,
+    e.professional_mission,
+    e.always_learning
+FROM dim_engineer e
+JOIN bridge_engineer_capability b
+    ON e.engineer_sk = b.engineer_sk
+JOIN dim_capability c
+    ON b.capability_sk = c.capability_sk
+GROUP BY ALL;
+
+</details>
 
 🚀 What I'm working on
 
@@ -159,4 +287,3 @@ Most of my recent work lives in enterprise environments and cannot be published 
 </p>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:07152E,45:0D47A1,100:00B8D4&height=120&section=footer" width="100%" alt="Footer" />
-
